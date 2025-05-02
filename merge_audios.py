@@ -1,6 +1,6 @@
 from pydub import AudioSegment
 
-audio = AudioSegment.from_file('Audio/k1.m4a')
+audio = AudioSegment.from_file('Audio/k1.m4a', format='m4a')
 
 for size in ['k', 'm', 'l']:
     for number in range(1, 11, 1):
@@ -8,6 +8,4 @@ for size in ['k', 'm', 'l']:
             continue
         audio_to_merge = AudioSegment.from_file(f'Audio/{size}{number}.m4a', format ='m4a')
         audio = audio.append(audio_to_merge)
-        audio.export('merged', format ='m4a')
-        break
-    break
+        audio.export('Audio/merged_files.mp3', format ='mp3')
