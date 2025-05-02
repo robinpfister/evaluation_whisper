@@ -1,8 +1,7 @@
 from jiwer import wer, mer
 import numpy as np
 
-
-for model in ['Word','Wispher_base', 'Wispher_tiny', 'Wispher_small']:
+for model in ['Wispher_tiny', 'Wispher_base', 'Wispher_small', 'Word', 'Gemini', 'GPT']:
     print(f'Model: {model}')
     wer_all = []
     mer_all = []
@@ -32,5 +31,5 @@ for model in ['Word','Wispher_base', 'Wispher_tiny', 'Wispher_small']:
     wer_stat = np.mean(wer_all)
     mer_stat = np.mean(mer_all)
 
-    print(round(wer_stat, 2))
-    print(round(mer_stat, 2))
+    print(round(wer_stat, 4))
+    print(round(mer_stat, 4))
